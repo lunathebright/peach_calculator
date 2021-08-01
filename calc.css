@@ -1,0 +1,79 @@
+main {
+    width: 350px;
+    background-color: #ffdde1;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+.result {
+    border-radius: 8px;
+    background-color: rgb(255, 247, 247);
+    height: 100px;
+    margin: 0 0 10px;
+    padding: 38px 8px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.result::before {
+    content: '🍑';
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+} 
+.result.change {
+    animation-name: changeBackground;
+    animation-duration: 1.5s;
+}
+@keyframes changeBackground {
+    from {
+        background-color: #e4f6ff;
+    }
+    to {
+        background-color: rgb(255, 247, 247);
+    }
+}
+.result span {
+    font-weight: bold;   
+    font-size: 28px;
+    color: #689cb8;
+    text-align: right;
+}
+.calc-area {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    height: 340px;
+    gap: 0 10px;
+}
+.calc-area > div {
+    display: grid;
+    gap: 10px;
+}
+.calc-area .num-area {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4,1fr);
+}
+.calc-area .fn-area {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+}
+.calc-area button {
+    background-color: rgb(255, 247, 247);
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #93d9ff;
+    font-weight: bold;
+    font-size: 16px;
+}
+.calc-area button:hover {
+    border-radius: 40%;
+    background-color: #ddf1fc;
+    color: #ffaeb7;
+    transition: all 0.3s;
+}
+.calc-area button:focus {
+    outline: none;
+}
